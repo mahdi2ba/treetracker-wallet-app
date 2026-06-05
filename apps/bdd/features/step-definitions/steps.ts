@@ -90,9 +90,12 @@ Then(
 Then(/^I should see my new wallet in the list of wallets$/, async () => {
   await expect($("[data-test=wallet-list]")).toBeDisplayed();
   const walletItemSelector = `[data-test=wallet-item-name-${stepState.walletName}]`;
-  // Wait for the wallet item to be displayed assuming API latency
+  // Wait for the wallet item to be displayed. The create flow awaits a real
+  // cloud wallet-API round-trip before the optimistic list update, so 3s was
+  // too short in fast/headless runs (the in-flight POST could even be aborted
+  // when the assertion failed first). Allow realistic remote latency.
   await $(walletItemSelector).waitForDisplayed({
-    timeout: 3000,
+    timeout: 15000,
     timeoutMsg: `Wallet item with name "${stepState.walletName}" did not appear in the list`,
   });
 });
@@ -174,7 +177,9 @@ Then(/^I should see a confirmation message$/, async () => {
       return false;
     },
     {
-      timeout: 10000,
+      // Registration round-trips to cloud Keycloak (create user), which can be
+      // slow when cold or under parallel load — allow realistic remote latency.
+      timeout: 20000,
       timeoutMsg: "Expected success message or redirect to login",
     },
   );
