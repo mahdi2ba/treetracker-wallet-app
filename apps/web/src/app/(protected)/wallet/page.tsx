@@ -2,7 +2,15 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Box, Button, Typography, Stack, IconButton } from "@mui/material";
+import {
+  Box,
+  Button,
+  Typography,
+  Stack,
+  IconButton,
+  Snackbar,
+  Alert,
+} from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
 import AddIcon from "@mui/icons-material/Add";
 import WalletItem from "@/components/WalletItem";
@@ -17,6 +25,7 @@ export default function WalletPage() {
   const { wallets: serverWallets, isWalletLoading, error } = useGetWallets();
   const [isInfoOpen, setIsInfoOpen] = useState(false);
   const [isCreateOpen, setIsCreateOpen] = useState(false);
+  const [notification, setNotification] = useState<string | null>(null);
 
   const normalize = (s: string) => s.trim().toLowerCase();
 
@@ -35,8 +44,11 @@ export default function WalletPage() {
     name: string;
     description: string;
   }) => {
-    const isDup = wallets.some(w => normalize(w.name) === normalize(name));
+    const isDup = wallets.some((w) => normalize(w.name) === normalize(name));
     if (isDup) return;
+
+    // First wallet for this user? (empty list before this creation)
+    const isFirstWallet = wallets.length === 0;
 
     const result = await createWallet({
       name,
@@ -45,7 +57,7 @@ export default function WalletPage() {
 
     console.log(result);
 
-    setWallets(prev => [
+    setWallets((prev) => [
       {
         name,
         created_at: new Date().toLocaleString("en-US", {
@@ -57,6 +69,12 @@ export default function WalletPage() {
       },
       ...prev,
     ]);
+
+    if (isFirstWallet) {
+      setNotification(
+        "Thansk you for creating your wallet, we will gift you 1 token for your first wallet, please check your wallet details",
+      );
+    }
   };
 
   // if (isWalletLoading) return <div>Loading wallets...</div>;
@@ -70,13 +88,15 @@ export default function WalletPage() {
           variant="text"
           startIcon={<AddIcon />}
           onClick={() => setIsCreateOpen(true)}
-          sx={{ color: "green", fontSize: "1rem", fontWeight: 500 }}>
+          sx={{ color: "green", fontSize: "1rem", fontWeight: 500 }}
+        >
           CREATE WALLET
         </Button>
         <IconButton
           aria-label="More wallet information"
           onClick={() => setIsInfoOpen(true)}
-          sx={{ color: "#2226298F" }}>
+          sx={{ color: "#2226298F" }}
+        >
           <InfoIcon sx={{ width: "20px" }} />
         </IconButton>
       </Box>
@@ -97,7 +117,8 @@ export default function WalletPage() {
               router.push(
                 `/wallet/details?name=${encodeURIComponent(wallet.name)}`,
               )
-            }>
+            }
+          >
             <WalletItem {...(wallet as Wallet)} />
           </div>
         ))}
@@ -106,7 +127,8 @@ export default function WalletPage() {
       <GenericDrawer
         open={isInfoOpen}
         title="Good-to-know"
-        onClose={() => setIsInfoOpen(false)}>
+        onClose={() => setIsInfoOpen(false)}
+      >
         <Typography variant="body1" color="textPrimary">
           You can have up to 2 wallets.
         </Typography>
@@ -116,8 +138,22 @@ export default function WalletPage() {
         open={isCreateOpen}
         onClose={() => setIsCreateOpen(false)}
         onCreate={handleCreate}
-        existingNames={wallets.map(w => w.name)}
+        existingNames={wallets.map((w) => w.name)}
       />
+
+      <Snackbar
+        open={Boolean(notification)}
+        onClose={() => setNotification(null)}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert
+          severity="success"
+          onClose={() => setNotification(null)}
+          data-test="wallet-create-notification"
+        >
+          {notification}
+        </Alert>
+      </Snackbar>
     </Box>
   );
 }

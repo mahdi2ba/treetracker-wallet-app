@@ -104,6 +104,19 @@ Then(/^I should see my new wallet in the list of wallets$/, async () => {
   });
 });
 
+// Verify the post-creation notification (shown for the user's first wallet).
+Then(/^An notification saying: "(.*)"$/, async (message: string) => {
+  const el = $('[data-test="wallet-create-notification"]');
+  await el.waitForDisplayed({
+    timeout: 15000,
+    timeoutMsg: "wallet-creation notification not shown",
+  });
+  await browser.waitUntil(async () => (await el.getText()).includes(message), {
+    timeout: 10000,
+    timeoutMsg: "wallet-creation notification text did not match",
+  });
+});
+
 // ============================================================================
 // [REGISTER] Registration flows
 // ============================================================================
