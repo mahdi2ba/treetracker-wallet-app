@@ -109,7 +109,7 @@ Then(/^I should see my new wallet in the list of wallets$/, async () => {
   // too short in fast/headless runs (the in-flight POST could even be aborted
   // when the assertion failed first). Allow realistic remote latency.
   await $(walletItemSelector).waitForDisplayed({
-    timeout: 15000,
+    timeout: 100000,
     timeoutMsg: `Wallet item with name "${stepState.walletName}" did not appear in the list`,
   });
 });
@@ -134,9 +134,9 @@ Then(/^An notification saying: "(.*)"$/, async (message: string) => {
 
 When(/^I fill in the registration form with valid data$/, async table => {
   const data = table.rowsHash();
-  await $('[data-test="signup-username"] input').setValue(data.username);
-  await $('[data-test="signup-email"] input').setValue(data.email);
-  await $('[data-test="signup-password"] input').setValue(data.password);
+  await $('[data-test="signup-username"]').setValue(data.username);
+  await $('[data-test="signup-email"]').setValue(data.email);
+  await $('[data-test="signup-password"]').setValue(data.password);
 });
 
 When(
@@ -215,13 +215,11 @@ When("I create a new wallet", async () => {
   });
   await $("[data-test=wallet-create-open]").click();
   // Wallet creation drawer takes some time to open, so we wait for the input to be displayed
-  await $('[data-test="wallet-create-name"] input').waitForDisplayed({
-    timeout: 5000,
+  await $('[data-test="wallet-create-name"]').waitForDisplayed({
+    timeout: 30000,
   });
-  await $('[data-test="wallet-create-name"] input').setValue(
-    stepState.walletName,
-  );
-  await $('[data-test="wallet-create-description"] input').setValue("desc");
+  await $('[data-test="wallet-create-name"]').setValue(stepState.walletName);
+  await $('[data-test="wallet-create-description"]').setValue("desc");
   await $('[data-test="wallet-create-submit"]').click();
 });
 

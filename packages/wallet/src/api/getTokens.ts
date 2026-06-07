@@ -1,5 +1,5 @@
 import axios, { isAxiosError } from "axios";
-import { TREETRACKER_API, WALLET_API_KEY } from "../utils/config";
+import { TREETRACKER_WALLET_API } from "../utils/config";
 
 export async function getTokens(
   token: string,
@@ -8,14 +8,13 @@ export async function getTokens(
 ) {
   try {
     const response = await axios.get(
-      `${TREETRACKER_API}/tokens?wallet=${encodeURIComponent(
+      `${TREETRACKER_WALLET_API}/tokens?wallet=${encodeURIComponent(
         walletName,
       )}&limit=${limit}`,
       {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
-          "treetracker-api-key": WALLET_API_KEY,
         },
       },
     );

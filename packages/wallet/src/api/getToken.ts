@@ -1,13 +1,12 @@
 import axios, { isAxiosError } from "axios";
-import { TREETRACKER_API, WALLET_API_KEY } from "../utils/config";
+import { TREETRACKER_WALLET_API } from "../utils/config";
 
 export async function getToken(token: string, id: string) {
   try {
-    const response = await axios.get(`${TREETRACKER_API}/tokens/${id}`, {
+    const response = await axios.get(`${TREETRACKER_WALLET_API}/tokens/${id}`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
-        "treetracker-api-key": WALLET_API_KEY,
       },
     });
 

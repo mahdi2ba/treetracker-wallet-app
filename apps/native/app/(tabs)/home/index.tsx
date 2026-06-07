@@ -1,9 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useAtom } from "jotai";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Pressable,
+} from "react-native";
 import { FlashList } from "@shopify/flash-list";
-import { useRouter } from "expo-router";
-import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
+import { useLocalSearchParams, useRouter } from "expo-router";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import {
+  Ionicons,
+  MaterialCommunityIcons,
+  MaterialIcons,
+} from "@expo/vector-icons";
+import { CopilotStep, walkthroughable, useCopilot } from "react-native-copilot";
 import Heading from "@common/Heading";
 import WalletSummary from "@components/ui/WalletSummary";
 import { THEME, TypographyWeight } from "@/theme";
@@ -23,10 +35,19 @@ export const balanceData = [
   { id: 2, value: "2", label: "Wallets", icon: "wallet-outline" },
 ];
 
+const WalkthroughableView = walkthroughable(View);
+const HOME_TOUR_SEEN_KEY = "hasSeenHomeTour";
+
 export default function Home() {
   const [isSearching] = useAtom(isSearchingAtom);
   const [isLoading] = useAtom(searchLoadingAtom);
   const [, selectCategory] = useAtom(selectCategoryAtom);
+  const params = useLocalSearchParams();
+  const { start } = useCopilot();
+  const hasStartedRef = useRef(false);
+  const lastSnackbarKeyRef = useRef<string | null>(null);
+  const [snackbarVisible, setSnackbarVisible] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
 
   const router = useRouter();
 
@@ -35,11 +56,86 @@ export default function Home() {
   }
 
   const { colors, typography, layout, spacing } = THEME;
+
+  useEffect(() => {
+    const checkHomeTourStatus = async () => {
+      try {
+        const hasSeenTour = await AsyncStorage.getItem(HOME_TOUR_SEEN_KEY);
+        if (hasSeenTour === "true") {
+          hasStartedRef.current = true;
+        }
+      } catch (error) {
+        console.warn("Failed to read home tour status:", error);
+      }
+    };
+
+    checkHomeTourStatus();
+  }, []);
+
   useEffect(() => {
     if (!isSearching) {
       selectCategory("all");
     }
   }, [selectCategory, isSearching]);
+
+  useEffect(() => {
+    if (isSearching || isLoading || hasStartedRef.current) {
+      return;
+    }
+
+    const timeout = setTimeout(async () => {
+      hasStartedRef.current = true;
+      try {
+        await AsyncStorage.setItem(HOME_TOUR_SEEN_KEY, "true");
+      } catch (error) {
+        console.warn("Failed to persist home tour status:", error);
+      }
+      start();
+    }, 300);
+
+    return () => clearTimeout(timeout);
+  }, [isLoading, isSearching, start]);
+
+  const snackbarKey = useMemo(() => {
+    const key = params.snackbarKey;
+    return Array.isArray(key) ? key[0] : key;
+  }, [params.snackbarKey]);
+
+  const snackbarAmount = useMemo(() => {
+    const amount = params.snackbarAmount;
+    return Array.isArray(amount) ? amount[0] : amount;
+  }, [params.snackbarAmount]);
+
+  const snackbarAction = useMemo(() => {
+    const action = params.snackbarAction;
+    return Array.isArray(action) ? action[0] : action;
+  }, [params.snackbarAction]);
+
+  useEffect(() => {
+    if (!snackbarKey || snackbarKey === lastSnackbarKeyRef.current) {
+      return;
+    }
+
+    const parsedAmount = Number.parseFloat(snackbarAmount ?? "");
+    const amountText = Number.isFinite(parsedAmount) ? parsedAmount : 0;
+    const actionText = snackbarAction === "request" ? "requested!" : "sent!";
+
+    setSnackbarMessage(`${amountText} Tokens ${actionText}`);
+    setSnackbarVisible(true);
+    lastSnackbarKeyRef.current = snackbarKey;
+  }, [snackbarAction, snackbarAmount, snackbarKey]);
+
+  useEffect(() => {
+    if (!snackbarVisible) {
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      setSnackbarVisible(false);
+    }, 6000);
+
+    return () => clearTimeout(timeout);
+  }, [snackbarVisible]);
 
   const ActivityHeader = () => (
     <View
@@ -50,25 +146,10 @@ export default function Home() {
     >
       <View style={[styles.balancesContainer, { gap: spacing.md }]}>
         {balanceData.map((item) => (
-          <WalletSummary
+          <BalanceCard
             key={item.id}
-            value={item.value}
-            icon={
-              item.label === "Tokens" ? (
-                <MaterialIcons name="toll" size={24} color={colors.primary} />
-              ) : (
-                <MaterialCommunityIcons
-                  name="wallet-outline"
-                  size={24}
-                  color={colors.gray700}
-                />
-              )
-            }
-            label={item.label}
-            style={[
-              styles.balanceCard,
-              { width: Math.max(layout.screenPadding * 8, 140) },
-            ]}
+            item={item}
+            cardWidth={Math.max(layout.screenPadding * 8, 140)}
           />
         ))}
       </View>
@@ -146,8 +227,82 @@ export default function Home() {
           />
         </>
       )}
+
+      {snackbarVisible ? (
+        <View style={styles.snackbarContainer}>
+          <Text style={styles.snackbarMessage}>{snackbarMessage}</Text>
+          <Pressable
+            onPress={() => setSnackbarVisible(false)}
+            style={styles.snackbarUndoButton}
+          >
+            <Text style={styles.snackbarUndoText}>UNDO</Text>
+          </Pressable>
+          <Pressable onPress={() => setSnackbarVisible(false)}>
+            <Ionicons name="close" size={24} color="#FFFFFF" />
+          </Pressable>
+        </View>
+      ) : null}
     </View>
   );
+}
+
+function BalanceCard({
+  item,
+  cardWidth,
+}: {
+  item: (typeof balanceData)[number];
+  cardWidth: number;
+}) {
+  const { colors } = THEME;
+
+  const content = (
+    <WalletSummary
+      value={item.value}
+      icon={
+        item.label === "Tokens" ? (
+          <MaterialIcons name="toll" size={24} color={colors.primary} />
+        ) : (
+          <MaterialCommunityIcons
+            name="wallet-outline"
+            size={24}
+            color={colors.gray700}
+          />
+        )
+      }
+      label={item.label}
+      style={[styles.balanceCard, { width: cardWidth }]}
+    />
+  );
+
+  if (item.label === "Tokens") {
+    return (
+      <CopilotStep
+        text={
+          "Here you can view the total amount of tokens (a digital asset representing your contributions)."
+        }
+        order={1}
+        name="homeTokens"
+      >
+        <WalkthroughableView>{content}</WalkthroughableView>
+      </CopilotStep>
+    );
+  }
+
+  if (item.label === "Wallets") {
+    return (
+      <CopilotStep
+        text={
+          "Here you can see the total amount of wallets (restricted to max 2 at this time)."
+        }
+        order={2}
+        name="homeWallets"
+      >
+        <WalkthroughableView>{content}</WalkthroughableView>
+      </CopilotStep>
+    );
+  }
+
+  return content;
 }
 
 const styles = StyleSheet.create({
@@ -185,5 +340,37 @@ const styles = StyleSheet.create({
 
   viewAllText: {
     textDecorationLine: "underline",
+  },
+
+  snackbarContainer: {
+    position: "absolute",
+    left: 12,
+    right: 12,
+    bottom: 92,
+    borderRadius: 4,
+    backgroundColor: "#323232",
+    flexDirection: "row",
+    alignItems: "center",
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.35,
+    shadowRadius: 6,
+    elevation: 7,
+  },
+  snackbarMessage: {
+    flex: 1,
+    color: "#FFFFFF",
+    fontSize: 28 / 2,
+  },
+  snackbarUndoButton: {
+    marginLeft: 16,
+    marginRight: 16,
+  },
+  snackbarUndoText: {
+    color: "#61892F",
+    fontSize: 12,
+    fontWeight: "700",
   },
 });

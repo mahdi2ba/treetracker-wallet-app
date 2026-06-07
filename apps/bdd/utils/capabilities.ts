@@ -5,7 +5,14 @@ export const CAPABILITY_WEB_CHROME = [
     // stale-element churn after the cross-origin redirect to Keycloak's pages.
     "wdio:enforceWebDriverClassic": true,
     "goog:chromeOptions": {
-      args: ["--headless", "--disable-gpu", "--window-size=1920,1080"],
+      args: [
+        "--disable-gpu",
+        "--no-sandbox",
+        "--disable-dev-shm-usage",
+        "--start-maximized",
+        "--headless=new",
+        "--window-size=1920,1080",
+      ],
     },
   },
 ];
@@ -19,7 +26,9 @@ export const CAPABILITY_WEB_CHROME_FOR_DEBUG = [
     "goog:chromeOptions": {
       args: [
         "--disable-gpu",
-        "--window-size=1920,1080",
+        "--start-maximized",
+        "--no-sandbox",
+        "--disable-dev-shm-usage",
         "--auto-open-devtools-for-tabs",
       ],
     },
@@ -30,6 +39,7 @@ export const CAPABILITY_ANDROID = [
   {
     platformName: "Android",
     "appium:deviceName": "Pixel_9a",
+    "appium:isHeadless": true,
     "appium:app": `${process.env.PROJECT_ROOT_ANDROID}/android/app/build/outputs/apk/debug/app-debug.apk`,
     "appium:automationName": "UiAutomator2",
     "appium:appPackage": "com.gtw.app",
