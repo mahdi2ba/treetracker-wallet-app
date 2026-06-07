@@ -2,7 +2,7 @@
 
 import React from "react";
 import { usePathname } from "next/navigation";
-import { Box, Typography, IconButton } from "@mui/material";
+import { Box, Typography, IconButton, Tooltip } from "@mui/material";
 import HeaderLogo from "./HeaderLogo";
 import HeaderSearch from "./HeaderSearch";
 import NotificationHeader from "./NotificationHeader";
@@ -35,9 +35,11 @@ const styles = {
 function DefaultHeaderView({
   onSearchExpand,
   onFilterOpen,
+  disabled = false,
 }: {
   onSearchExpand: () => void;
   onFilterOpen: () => void;
+  disabled?: boolean;
 }) {
   return (
     <Box sx={styles.sharedBox}>
@@ -54,24 +56,34 @@ function DefaultHeaderView({
           onExpand={onSearchExpand}
           isExpanded={false}
           onCollapse={() => {}}
+          disabled={disabled}
         />
 
-        <IconButton
-          sx={{
-            ml: 1,
-            backgroundColor: (theme) => theme.palette.header.main,
-            "&:hover": {
-              backgroundColor: (theme) => theme.palette.primary.dark,
-            },
-          }}
-          onClick={() => {
-            console.log("filter clicked");
-          }}
-        >
-          <FilterListIcon
-            sx={{ color: (theme) => theme.palette.common.white }}
-          />
-        </IconButton>
+        <Tooltip title={disabled ? "Coming soon" : ""}>
+          <span>
+            <IconButton
+              disabled={disabled}
+              sx={{
+                ml: 1,
+                backgroundColor: (theme) => theme.palette.header.main,
+                "&:hover": {
+                  backgroundColor: (theme) => theme.palette.primary.dark,
+                },
+                "&.Mui-disabled": {
+                  backgroundColor: (theme) =>
+                    theme.palette.action.disabledBackground,
+                },
+              }}
+              onClick={() => {
+                console.log("filter clicked");
+              }}
+            >
+              <FilterListIcon
+                sx={{ color: (theme) => theme.palette.common.white }}
+              />
+            </IconButton>
+          </span>
+        </Tooltip>
       </Box>
     </Box>
   );
@@ -132,6 +144,7 @@ export default function Header() {
           <DefaultHeaderView
             onSearchExpand={toggleSearchExpanded}
             onFilterOpen={() => setIsFilterOpen(true)}
+            disabled
           />
         )}
       </Box>
