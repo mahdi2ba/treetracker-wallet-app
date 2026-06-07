@@ -1,40 +1,563 @@
-[2026-01-31T13:43:52.242Z] ffmpeg command: "/Users/deanchen/work/greenstand/treetracker-wallet-app/node_modules/@ffmpeg-installer/darwin-x64/ffmpeg" -y -r 10 -i "/Users/deanchen/work/greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/.video-reporter-screenshots/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--01-31-2026--21-43-49-360/%04d.png" -vcodec libx264 -crf 32 -pix_fmt yuv420p -vf "scale=1200:trunc(ow/a/2)*2","setpts=5.0*PTS" "/Users/deanchen/work/greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--01-31-2026--21-43-49-360.mp4"
-[2026-01-31T13:43:52.370Z] Generated video: "/Users/deanchen/work/greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--01-31-2026--21-43-49-360.mp4" (128ms)
-[2026-01-31T13:43:52.698Z] - Bidi Screenshot (frame: 0)
-[2026-01-31T13:43:52.970Z] Add frame for command: /session/:sessionId/element/f.176EE7BB275A6C8A2EC6DE7A3D97B23A.d.21DCFA44DDB94D4B29090A948D454321.e.25/clear => [clear]
-[2026-01-31T13:43:53.602Z] Add frame for command: /session/:sessionId/element/f.176EE7BB275A6C8A2EC6DE7A3D97B23A.d.21DCFA44DDB94D4B29090A948D454321.e.25/value => [value]
-[2026-01-31T13:43:54.355Z] Add frame for command: /session/:sessionId/element/f.176EE7BB275A6C8A2EC6DE7A3D97B23A.d.21DCFA44DDB94D4B29090A948D454321.e.26/clear => [clear]
-[2026-01-31T13:43:55.045Z] - Bidi Screenshot (frame: 1)
-[2026-01-31T13:43:55.053Z] - Bidi Screenshot (frame: 2)
-[2026-01-31T13:43:55.538Z] Add frame for command: /session/:sessionId/element/f.176EE7BB275A6C8A2EC6DE7A3D97B23A.d.21DCFA44DDB94D4B29090A948D454321.e.26/value => [value]
-[2026-01-31T13:43:58.195Z] - Bidi Screenshot (frame: 3)
-[2026-01-31T13:43:58.322Z] Add frame for command: /session/:sessionId/element/f.176EE7BB275A6C8A2EC6DE7A3D97B23A.d.21DCFA44DDB94D4B29090A948D454321.e.17/click => [click]
-[2026-01-31T13:44:00.298Z] - Bidi Screenshot (frame: 4)
-[2026-01-31T13:44:04.358Z] - Bidi Screenshot (frame: 5)
-[2026-01-31T13:44:06.273Z] ffmpeg command: "/Users/deanchen/work/greenstand/treetracker-wallet-app/node_modules/@ffmpeg-installer/darwin-x64/ffmpeg" -y -r 10 -i "/Users/deanchen/work/greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/.video-reporter-screenshots/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--01-31-2026--21-43-49-360/%04d.png" -vcodec libx264 -crf 32 -pix_fmt yuv420p -vf "scale=1200:trunc(ow/a/2)*2","setpts=5.0*PTS" "/Users/deanchen/work/greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--01-31-2026--21-43-49-360.mp4"
-[2026-01-31T13:44:07.617Z] Generated video: "/Users/deanchen/work/greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--01-31-2026--21-43-49-360.mp4" (1344ms)
-[2026-01-31T13:44:07.797Z] Bidi Screenshot not available (frame: 6). Error: Error: WebDriver Bidi command "browsingContext.captureScreenshot" failed with error: unknown error - Cannot find context with specified id..
-[2026-01-31T13:44:11.120Z] ffmpeg command: "/Users/deanchen/work/greenstand/treetracker-wallet-app/node_modules/@ffmpeg-installer/darwin-x64/ffmpeg" -y -r 10 -i "/Users/deanchen/work/greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/.video-reporter-screenshots/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--01-31-2026--21-43-49-360/%04d.png" -vcodec libx264 -crf 32 -pix_fmt yuv420p -vf "scale=1200:trunc(ow/a/2)*2","setpts=5.0*PTS" "/Users/deanchen/work/greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--01-31-2026--21-43-49-360.mp4"
-[2026-01-31T13:44:12.084Z] Generated video: "/Users/deanchen/work/greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--01-31-2026--21-43-49-360.mp4" (964ms)
-[2026-01-31T13:44:12.754Z] Add frame for command: /session/:sessionId/element/f.176EE7BB275A6C8A2EC6DE7A3D97B23A.d.2C6AA69738B9ADBB03CFB6B409EE523C.e.45/click => [click]
-[2026-01-31T13:44:14.420Z] - Bidi Screenshot (frame: 7)
-[2026-01-31T13:44:15.168Z] - Bidi Screenshot (frame: 8)
-[2026-01-31T13:44:17.927Z] Add frame for command: /session/:sessionId/element/f.176EE7BB275A6C8A2EC6DE7A3D97B23A.d.2C6AA69738B9ADBB03CFB6B409EE523C.e.48/clear => [clear]
-[2026-01-31T13:44:18.954Z] Add frame for command: /session/:sessionId/element/f.176EE7BB275A6C8A2EC6DE7A3D97B23A.d.2C6AA69738B9ADBB03CFB6B409EE523C.e.48/value => [value]
-[2026-01-31T13:44:19.530Z] Add frame for command: /session/:sessionId/element/f.176EE7BB275A6C8A2EC6DE7A3D97B23A.d.2C6AA69738B9ADBB03CFB6B409EE523C.e.49/clear => [clear]
-[2026-01-31T13:44:19.579Z] - Bidi Screenshot (frame: 9)
-[2026-01-31T13:44:19.584Z] - Bidi Screenshot (frame: 10)
-[2026-01-31T13:44:19.635Z] Add frame for command: /session/:sessionId/element/f.176EE7BB275A6C8A2EC6DE7A3D97B23A.d.2C6AA69738B9ADBB03CFB6B409EE523C.e.49/value => [value]
-[2026-01-31T13:44:24.854Z] - Bidi Screenshot (frame: 11)
-[2026-01-31T13:44:27.776Z] - Bidi Screenshot (frame: 12)
-[2026-01-31T13:44:27.934Z] Add frame for command: /session/:sessionId/element/f.176EE7BB275A6C8A2EC6DE7A3D97B23A.d.2C6AA69738B9ADBB03CFB6B409EE523C.e.56/click => [click]
-[2026-01-31T13:44:27.937Z] ffmpeg command: "/Users/deanchen/work/greenstand/treetracker-wallet-app/node_modules/@ffmpeg-installer/darwin-x64/ffmpeg" -y -r 10 -i "/Users/deanchen/work/greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/.video-reporter-screenshots/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--01-31-2026--21-43-49-360/%04d.png" -vcodec libx264 -crf 32 -pix_fmt yuv420p -vf "scale=1200:trunc(ow/a/2)*2","setpts=5.0*PTS" "/Users/deanchen/work/greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--01-31-2026--21-43-49-360.mp4"
-[2026-01-31T13:44:29.505Z] Generated video: "/Users/deanchen/work/greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--01-31-2026--21-43-49-360.mp4" (1567ms)
-[2026-01-31T13:44:31.234Z] - Bidi Screenshot (frame: 13)
-[2026-01-31T13:44:31.257Z] - Bidi Screenshot (frame: 14)
-[2026-01-31T13:44:40.511Z] Add frame for command: /session/:sessionId/actions => [actions]
-[2026-01-31T13:44:41.243Z] - Bidi Screenshot (frame: 15)
-[2026-01-31T13:44:48.382Z] ffmpeg command: "/Users/deanchen/work/greenstand/treetracker-wallet-app/node_modules/@ffmpeg-installer/darwin-x64/ffmpeg" -y -r 10 -i "/Users/deanchen/work/greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/.video-reporter-screenshots/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--01-31-2026--21-43-49-360/%04d.png" -vcodec libx264 -crf 32 -pix_fmt yuv420p -vf "scale=1200:trunc(ow/a/2)*2","setpts=5.0*PTS" "/Users/deanchen/work/greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--01-31-2026--21-43-49-360.mp4"
-[2026-01-31T13:44:49.097Z] - Bidi Screenshot (frame: 16)
-[2026-01-31T13:44:49.902Z] Generated video: "/Users/deanchen/work/greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--01-31-2026--21-43-49-360.mp4" (1520ms)
-[2026-01-31T13:44:59.331Z] Generated 5 videos, video report done!
+[2026-06-07T12:41:43.871Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:41:43.909Z] - Screenshot (frame: 0)
+[2026-06-07T12:41:44.486Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:41:44.488Z] ffmpeg command: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg" -y -r 10 -i "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/.video-reporter-screenshots/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858/%04d.png" -vcodec libx264 -crf 32 -pix_fmt yuv420p -vf "scale=1200:trunc(ow/a/2)*2","setpts=1.0*PTS" "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4"
+[2026-06-07T12:41:55.221Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:41:55.222Z] - Screenshot (frame: 1)
+[2026-06-07T12:41:55.266Z] - Screenshot (frame: 2)
+[2026-06-07T12:41:55.311Z] Generated video: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4" (10823ms)
+[2026-06-07T12:41:55.314Z] - Screenshot (frame: 3)
+[2026-06-07T12:41:55.562Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:41:55.633Z] - Screenshot (frame: 4)
+[2026-06-07T12:41:55.646Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.84C30CC0A440EFF78CB2176E879CA21D.e.50/clear => [clear]
+[2026-06-07T12:41:55.699Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.84C30CC0A440EFF78CB2176E879CA21D.e.50/value => [value]
+[2026-06-07T12:41:55.766Z] - Screenshot (frame: 5)
+[2026-06-07T12:41:55.830Z] - Screenshot (frame: 6)
+[2026-06-07T12:41:55.842Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.84C30CC0A440EFF78CB2176E879CA21D.e.56/clear => [clear]
+[2026-06-07T12:41:55.862Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.84C30CC0A440EFF78CB2176E879CA21D.e.56/value => [value]
+[2026-06-07T12:41:55.933Z] - Screenshot (frame: 7)
+[2026-06-07T12:41:56.000Z] - Screenshot (frame: 8)
+[2026-06-07T12:41:56.012Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.84C30CC0A440EFF78CB2176E879CA21D.e.68/clear => [clear]
+[2026-06-07T12:41:56.034Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.84C30CC0A440EFF78CB2176E879CA21D.e.68/value => [value]
+[2026-06-07T12:41:56.116Z] - Screenshot (frame: 9)
+[2026-06-07T12:41:56.182Z] - Screenshot (frame: 10)
+[2026-06-07T12:41:56.193Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.84C30CC0A440EFF78CB2176E879CA21D.e.62/clear => [clear]
+[2026-06-07T12:41:56.217Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.84C30CC0A440EFF78CB2176E879CA21D.e.62/value => [value]
+[2026-06-07T12:41:56.300Z] - Screenshot (frame: 11)
+[2026-06-07T12:41:56.366Z] - Screenshot (frame: 12)
+[2026-06-07T12:41:56.378Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.84C30CC0A440EFF78CB2176E879CA21D.e.75/clear => [clear]
+[2026-06-07T12:41:56.399Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.84C30CC0A440EFF78CB2176E879CA21D.e.75/value => [value]
+[2026-06-07T12:41:56.483Z] - Screenshot (frame: 13)
+[2026-06-07T12:41:56.551Z] - Screenshot (frame: 14)
+[2026-06-07T12:41:56.563Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.84C30CC0A440EFF78CB2176E879CA21D.e.84/clear => [clear]
+[2026-06-07T12:41:56.586Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.84C30CC0A440EFF78CB2176E879CA21D.e.84/value => [value]
+[2026-06-07T12:41:56.587Z] ffmpeg command: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg" -y -r 10 -i "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/.video-reporter-screenshots/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858/%04d.png" -vcodec libx264 -crf 32 -pix_fmt yuv420p -vf "scale=1200:trunc(ow/a/2)*2","setpts=1.0*PTS" "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4"
+[2026-06-07T12:41:56.661Z] - Screenshot (frame: 15)
+[2026-06-07T12:41:56.661Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:41:56.731Z] - Screenshot (frame: 16)
+[2026-06-07T12:41:56.761Z] - Screenshot (frame: 17)
+[2026-06-07T12:41:56.808Z] - Screenshot (frame: 18)
+[2026-06-07T12:41:56.907Z] Generated video: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4" (320ms)
+[2026-06-07T12:42:02.752Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.84C30CC0A440EFF78CB2176E879CA21D.e.94/click => [click]
+[2026-06-07T12:42:02.783Z] - Screenshot (frame: 19)
+[2026-06-07T12:42:02.785Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:02.791Z] Add frame for command: /session/:sessionId/actions => [actions]
+[2026-06-07T12:42:02.828Z] - Screenshot (frame: 20)
+[2026-06-07T12:42:02.828Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:02.860Z] - Screenshot (frame: 21)
+[2026-06-07T12:42:04.004Z] - Screenshot (frame: 22)
+[2026-06-07T12:42:08.703Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.84C30CC0A440EFF78CB2176E879CA21D.e.94/click => [click]
+[2026-06-07T12:42:08.726Z] - Screenshot (frame: 23)
+[2026-06-07T12:42:09.367Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:09.368Z] ffmpeg command: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg" -y -r 10 -i "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/.video-reporter-screenshots/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858/%04d.png" -vcodec libx264 -crf 32 -pix_fmt yuv420p -vf "scale=1200:trunc(ow/a/2)*2","setpts=1.0*PTS" "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4"
+[2026-06-07T12:42:09.371Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:09.454Z] - Screenshot (frame: 24)
+[2026-06-07T12:42:09.539Z] - Screenshot (frame: 26)
+[2026-06-07T12:42:09.627Z] - Screenshot (frame: 25)
+[2026-06-07T12:42:09.814Z] Generated video: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4" (446ms)
+[2026-06-07T12:42:12.580Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:12.581Z] ffmpeg command: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg" -y -r 10 -i "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/.video-reporter-screenshots/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858/%04d.png" -vcodec libx264 -crf 32 -pix_fmt yuv420p -vf "scale=1200:trunc(ow/a/2)*2","setpts=1.0*PTS" "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4"
+[2026-06-07T12:42:12.583Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:12.673Z] - Screenshot (frame: 27)
+[2026-06-07T12:42:12.758Z] - Screenshot (frame: 28)
+[2026-06-07T12:42:12.839Z] - Screenshot (frame: 29)
+[2026-06-07T12:42:12.972Z] Generated video: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4" (391ms)
+[2026-06-07T12:42:13.337Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:13.338Z] ffmpeg command: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg" -y -r 10 -i "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/.video-reporter-screenshots/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858/%04d.png" -vcodec libx264 -crf 32 -pix_fmt yuv420p -vf "scale=1200:trunc(ow/a/2)*2","setpts=1.0*PTS" "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4"
+[2026-06-07T12:42:13.362Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:13.421Z] - Screenshot (frame: 30)
+[2026-06-07T12:42:13.455Z] - Screenshot (frame: 31)
+[2026-06-07T12:42:13.504Z] - Screenshot (frame: 32)
+[2026-06-07T12:42:13.651Z] Generated video: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4" (313ms)
+[2026-06-07T12:42:13.674Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:13.721Z] - Screenshot (frame: 33)
+[2026-06-07T12:42:13.769Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.7470E56A5A3ECA226092BE6F43BAFF87.e.294/click => [click]
+[2026-06-07T12:42:13.839Z] - Screenshot (frame: 34)
+[2026-06-07T12:42:13.843Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:13.905Z] - Screenshot (frame: 35)
+[2026-06-07T12:42:13.918Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.7470E56A5A3ECA226092BE6F43BAFF87.e.414/clear => [clear]
+[2026-06-07T12:42:13.979Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.7470E56A5A3ECA226092BE6F43BAFF87.e.414/value => [value]
+[2026-06-07T12:42:14.056Z] - Screenshot (frame: 36)
+[2026-06-07T12:42:14.140Z] - Screenshot (frame: 37)
+[2026-06-07T12:42:14.154Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.7470E56A5A3ECA226092BE6F43BAFF87.e.417/clear => [clear]
+[2026-06-07T12:42:14.184Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.7470E56A5A3ECA226092BE6F43BAFF87.e.417/value => [value]
+[2026-06-07T12:42:14.273Z] - Screenshot (frame: 38)
+[2026-06-07T12:42:14.358Z] - Screenshot (frame: 39)
+[2026-06-07T12:42:14.395Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.7470E56A5A3ECA226092BE6F43BAFF87.e.422/click => [click]
+[2026-06-07T12:42:14.396Z] ffmpeg command: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg" -y -r 10 -i "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/.video-reporter-screenshots/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858/%04d.png" -vcodec libx264 -crf 32 -pix_fmt yuv420p -vf "scale=1200:trunc(ow/a/2)*2","setpts=1.0*PTS" "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4"
+[2026-06-07T12:42:14.398Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:14.489Z] - Screenshot (frame: 40)
+[2026-06-07T12:42:14.573Z] - Screenshot (frame: 41)
+[2026-06-07T12:42:14.638Z] - Screenshot (frame: 42)
+[2026-06-07T12:42:14.712Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:14.772Z] - Screenshot (frame: 43)
+[2026-06-07T12:42:14.845Z] Generated video: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4" (449ms)
+[2026-06-07T12:42:24.150Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:24.151Z] ffmpeg command: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg" -y -r 10 -i "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/.video-reporter-screenshots/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858/%04d.png" -vcodec libx264 -crf 32 -pix_fmt yuv420p -vf "scale=1200:trunc(ow/a/2)*2","setpts=1.0*PTS" "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4"
+[2026-06-07T12:42:24.154Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:24.208Z] - Screenshot (frame: 44)
+[2026-06-07T12:42:24.240Z] - Screenshot (frame: 45)
+[2026-06-07T12:42:24.273Z] - Screenshot (frame: 46)
+[2026-06-07T12:42:24.469Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:24.475Z] ffmpeg command: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg" -y -r 10 -i "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/.video-reporter-screenshots/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858/%04d.png" -vcodec libx264 -crf 32 -pix_fmt yuv420p -vf "scale=1200:trunc(ow/a/2)*2","setpts=1.0*PTS" "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4"
+[2026-06-07T12:42:24.506Z] - Screenshot (frame: 47)
+[2026-06-07T12:42:24.507Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:24.508Z] Generated video: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4" (357ms)
+[2026-06-07T12:42:24.539Z] - Screenshot (frame: 48)
+[2026-06-07T12:42:24.572Z] - Screenshot (frame: 49)
+[2026-06-07T12:42:24.809Z] Generated video: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4" (334ms)
+[2026-06-07T12:42:24.843Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.7470E56A5A3ECA226092BE6F43BAFF87.e.499/click => [click]
+[2026-06-07T12:42:24.953Z] - Screenshot (frame: 50)
+[2026-06-07T12:42:24.979Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:25.040Z] - Screenshot (frame: 51)
+[2026-06-07T12:42:25.044Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:25.045Z] ffmpeg command: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg" -y -r 10 -i "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/.video-reporter-screenshots/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858/%04d.png" -vcodec libx264 -crf 32 -pix_fmt yuv420p -vf "scale=1200:trunc(ow/a/2)*2","setpts=1.0*PTS" "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4"
+[2026-06-07T12:42:25.047Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:25.088Z] - Screenshot (frame: 52)
+[2026-06-07T12:42:25.139Z] - Screenshot (frame: 53)
+[2026-06-07T12:42:25.189Z] - Screenshot (frame: 54)
+[2026-06-07T12:42:25.459Z] Generated video: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4" (414ms)
+[2026-06-07T12:42:25.792Z] Add frame for command: /session/:sessionId/refresh => [refresh]
+[2026-06-07T12:42:25.874Z] - Screenshot (frame: 55)
+[2026-06-07T12:42:25.878Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:25.908Z] - Screenshot (frame: 56)
+[2026-06-07T12:42:28.399Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:28.400Z] ffmpeg command: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg" -y -r 10 -i "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/.video-reporter-screenshots/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858/%04d.png" -vcodec libx264 -crf 32 -pix_fmt yuv420p -vf "scale=1200:trunc(ow/a/2)*2","setpts=1.0*PTS" "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4"
+[2026-06-07T12:42:28.406Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:28.461Z] - Screenshot (frame: 57)
+[2026-06-07T12:42:28.493Z] - Screenshot (frame: 58)
+[2026-06-07T12:42:28.539Z] - Screenshot (frame: 59)
+[2026-06-07T12:42:28.720Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:28.758Z] - Screenshot (frame: 60)
+[2026-06-07T12:42:28.781Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.05D852359C15BA9EAB9E578681E0F6CD.e.774/click => [click]
+[2026-06-07T12:42:28.808Z] Generated video: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4" (408ms)
+[2026-06-07T12:42:28.823Z] - Screenshot (frame: 61)
+[2026-06-07T12:42:28.925Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:28.926Z] ffmpeg command: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg" -y -r 10 -i "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/.video-reporter-screenshots/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858/%04d.png" -vcodec libx264 -crf 32 -pix_fmt yuv420p -vf "scale=1200:trunc(ow/a/2)*2","setpts=1.0*PTS" "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4"
+[2026-06-07T12:42:28.928Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:28.956Z] - Screenshot (frame: 62)
+[2026-06-07T12:42:28.994Z] - Screenshot (frame: 63)
+[2026-06-07T12:42:29.022Z] - Screenshot (frame: 64)
+[2026-06-07T12:42:29.244Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:29.290Z] - Screenshot (frame: 65)
+[2026-06-07T12:42:29.293Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:29.300Z] ffmpeg command: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg" -y -r 10 -i "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/.video-reporter-screenshots/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858/%04d.png" -vcodec libx264 -crf 32 -pix_fmt yuv420p -vf "scale=1200:trunc(ow/a/2)*2","setpts=1.0*PTS" "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4"
+[2026-06-07T12:42:29.317Z] Generated video: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4" (391ms)
+[2026-06-07T12:42:29.339Z] - Screenshot (frame: 66)
+[2026-06-07T12:42:29.340Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:29.372Z] - Screenshot (frame: 67)
+[2026-06-07T12:42:29.406Z] - Screenshot (frame: 68)
+[2026-06-07T12:42:29.699Z] Add frame for command: /session/:sessionId/element/f.7429536488CAD5A1B693F4E5CF6DEE96.d.05D852359C15BA9EAB9E578681E0F6CD.e.785/click => [click]
+[2026-06-07T12:42:29.700Z] ffmpeg command: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg" -y -r 10 -i "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/.video-reporter-screenshots/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858/%04d.png" -vcodec libx264 -crf 32 -pix_fmt yuv420p -vf "scale=1200:trunc(ow/a/2)*2","setpts=1.0*PTS" "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4"
+[2026-06-07T12:42:29.704Z] Add frame for command: /session/:sessionId/execute/sync => [sync]
+[2026-06-07T12:42:29.707Z] Generated video: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4" (407ms)
+[2026-06-07T12:42:29.759Z] - Screenshot (frame: 69)
+[2026-06-07T12:42:29.789Z] - Screenshot (frame: 70)
+[2026-06-07T12:42:29.829Z] - Screenshot (frame: 71)
+[2026-06-07T12:42:30.118Z] Generated video: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4" (418ms)
+[2026-06-07T12:42:31.192Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:31.231Z] - Screenshot (frame: 72)
+[2026-06-07T12:42:31.290Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:31.332Z] - Screenshot (frame: 73)
+[2026-06-07T12:42:31.390Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:31.433Z] - Screenshot (frame: 74)
+[2026-06-07T12:42:31.490Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:31.551Z] - Screenshot (frame: 75)
+[2026-06-07T12:42:31.590Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:31.650Z] - Screenshot (frame: 76)
+[2026-06-07T12:42:31.690Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:31.749Z] - Screenshot (frame: 77)
+[2026-06-07T12:42:31.790Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:31.849Z] - Screenshot (frame: 78)
+[2026-06-07T12:42:31.890Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:31.949Z] - Screenshot (frame: 79)
+[2026-06-07T12:42:31.991Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:32.049Z] - Screenshot (frame: 80)
+[2026-06-07T12:42:32.090Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:32.149Z] - Screenshot (frame: 81)
+[2026-06-07T12:42:32.189Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:32.249Z] - Screenshot (frame: 82)
+[2026-06-07T12:42:32.290Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:32.350Z] - Screenshot (frame: 83)
+[2026-06-07T12:42:32.390Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:32.451Z] - Screenshot (frame: 84)
+[2026-06-07T12:42:32.490Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:32.547Z] - Screenshot (frame: 85)
+[2026-06-07T12:42:32.591Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:32.645Z] - Screenshot (frame: 86)
+[2026-06-07T12:42:32.689Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:32.712Z] - Screenshot (frame: 87)
+[2026-06-07T12:42:32.790Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:32.849Z] - Screenshot (frame: 88)
+[2026-06-07T12:42:32.890Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:32.932Z] - Screenshot (frame: 89)
+[2026-06-07T12:42:32.990Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:33.015Z] - Screenshot (frame: 90)
+[2026-06-07T12:42:33.090Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:33.133Z] - Screenshot (frame: 91)
+[2026-06-07T12:42:33.190Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:33.215Z] - Screenshot (frame: 92)
+[2026-06-07T12:42:33.290Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:33.350Z] - Screenshot (frame: 93)
+[2026-06-07T12:42:33.390Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:33.449Z] - Screenshot (frame: 94)
+[2026-06-07T12:42:33.490Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:33.515Z] - Screenshot (frame: 95)
+[2026-06-07T12:42:33.590Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:33.650Z] - Screenshot (frame: 96)
+[2026-06-07T12:42:33.691Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:33.748Z] - Screenshot (frame: 97)
+[2026-06-07T12:42:33.790Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:33.849Z] - Screenshot (frame: 98)
+[2026-06-07T12:42:33.891Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:33.915Z] - Screenshot (frame: 99)
+[2026-06-07T12:42:33.990Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:34.016Z] - Screenshot (frame: 100)
+[2026-06-07T12:42:34.090Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:34.116Z] - Screenshot (frame: 101)
+[2026-06-07T12:42:34.190Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:34.233Z] - Screenshot (frame: 102)
+[2026-06-07T12:42:34.289Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:34.315Z] - Screenshot (frame: 103)
+[2026-06-07T12:42:34.390Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:34.450Z] - Screenshot (frame: 104)
+[2026-06-07T12:42:34.489Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:34.549Z] - Screenshot (frame: 105)
+[2026-06-07T12:42:34.590Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:34.632Z] - Screenshot (frame: 106)
+[2026-06-07T12:42:34.689Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:34.715Z] - Screenshot (frame: 107)
+[2026-06-07T12:42:34.790Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:34.832Z] - Screenshot (frame: 108)
+[2026-06-07T12:42:34.890Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:34.915Z] - Screenshot (frame: 109)
+[2026-06-07T12:42:34.991Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:35.016Z] - Screenshot (frame: 110)
+[2026-06-07T12:42:35.090Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:35.115Z] - Screenshot (frame: 111)
+[2026-06-07T12:42:35.190Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:35.250Z] - Screenshot (frame: 112)
+[2026-06-07T12:42:35.289Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:35.350Z] - Screenshot (frame: 113)
+[2026-06-07T12:42:35.390Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:35.415Z] - Screenshot (frame: 114)
+[2026-06-07T12:42:35.492Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:35.551Z] - Screenshot (frame: 115)
+[2026-06-07T12:42:35.589Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:35.649Z] - Screenshot (frame: 116)
+[2026-06-07T12:42:35.691Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:35.733Z] - Screenshot (frame: 117)
+[2026-06-07T12:42:35.790Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:35.815Z] - Screenshot (frame: 118)
+[2026-06-07T12:42:35.897Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:35.933Z] - Screenshot (frame: 119)
+[2026-06-07T12:42:35.991Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:36.033Z] - Screenshot (frame: 120)
+[2026-06-07T12:42:36.090Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:36.132Z] - Screenshot (frame: 121)
+[2026-06-07T12:42:36.191Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:36.216Z] - Screenshot (frame: 122)
+[2026-06-07T12:42:36.291Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:36.316Z] - Screenshot (frame: 123)
+[2026-06-07T12:42:36.391Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:36.416Z] - Screenshot (frame: 124)
+[2026-06-07T12:42:36.489Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:36.516Z] - Screenshot (frame: 125)
+[2026-06-07T12:42:36.591Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:36.617Z] - Screenshot (frame: 126)
+[2026-06-07T12:42:36.690Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:36.717Z] - Screenshot (frame: 127)
+[2026-06-07T12:42:36.791Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:36.814Z] - Screenshot (frame: 128)
+[2026-06-07T12:42:36.892Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:36.916Z] - Screenshot (frame: 129)
+[2026-06-07T12:42:36.990Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:37.016Z] - Screenshot (frame: 130)
+[2026-06-07T12:42:37.091Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:37.117Z] - Screenshot (frame: 131)
+[2026-06-07T12:42:37.191Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:37.216Z] - Screenshot (frame: 132)
+[2026-06-07T12:42:37.290Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:37.316Z] - Screenshot (frame: 133)
+[2026-06-07T12:42:37.390Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:37.417Z] - Screenshot (frame: 134)
+[2026-06-07T12:42:37.492Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:37.517Z] - Screenshot (frame: 135)
+[2026-06-07T12:42:37.590Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:37.617Z] - Screenshot (frame: 136)
+[2026-06-07T12:42:37.691Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:37.716Z] - Screenshot (frame: 137)
+[2026-06-07T12:42:37.790Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:37.814Z] - Screenshot (frame: 138)
+[2026-06-07T12:42:37.890Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:37.916Z] - Screenshot (frame: 139)
+[2026-06-07T12:42:37.989Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:38.017Z] - Screenshot (frame: 140)
+[2026-06-07T12:42:38.091Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:38.117Z] - Screenshot (frame: 141)
+[2026-06-07T12:42:38.191Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:38.217Z] - Screenshot (frame: 142)
+[2026-06-07T12:42:38.289Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:38.316Z] - Screenshot (frame: 143)
+[2026-06-07T12:42:38.392Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:38.417Z] - Screenshot (frame: 144)
+[2026-06-07T12:42:38.490Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:38.517Z] - Screenshot (frame: 145)
+[2026-06-07T12:42:38.590Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:38.615Z] - Screenshot (frame: 146)
+[2026-06-07T12:42:38.690Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:38.715Z] - Screenshot (frame: 147)
+[2026-06-07T12:42:38.790Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:38.815Z] - Screenshot (frame: 148)
+[2026-06-07T12:42:38.890Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:38.915Z] - Screenshot (frame: 149)
+[2026-06-07T12:42:38.990Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:39.016Z] - Screenshot (frame: 150)
+[2026-06-07T12:42:39.090Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:39.117Z] - Screenshot (frame: 151)
+[2026-06-07T12:42:39.190Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:39.217Z] - Screenshot (frame: 152)
+[2026-06-07T12:42:39.291Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:39.315Z] - Screenshot (frame: 153)
+[2026-06-07T12:42:39.391Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:39.415Z] - Screenshot (frame: 154)
+[2026-06-07T12:42:39.491Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:39.516Z] - Screenshot (frame: 155)
+[2026-06-07T12:42:39.589Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:39.616Z] - Screenshot (frame: 156)
+[2026-06-07T12:42:39.690Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:39.716Z] - Screenshot (frame: 157)
+[2026-06-07T12:42:39.790Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:39.816Z] - Screenshot (frame: 158)
+[2026-06-07T12:42:39.890Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:39.916Z] - Screenshot (frame: 159)
+[2026-06-07T12:42:39.990Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:40.017Z] - Screenshot (frame: 160)
+[2026-06-07T12:42:40.090Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:40.116Z] - Screenshot (frame: 161)
+[2026-06-07T12:42:40.190Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:40.216Z] - Screenshot (frame: 162)
+[2026-06-07T12:42:40.290Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:40.317Z] - Screenshot (frame: 163)
+[2026-06-07T12:42:40.391Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:40.416Z] - Screenshot (frame: 164)
+[2026-06-07T12:42:40.490Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:40.516Z] - Screenshot (frame: 165)
+[2026-06-07T12:42:40.590Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:40.616Z] - Screenshot (frame: 166)
+[2026-06-07T12:42:40.690Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:40.717Z] - Screenshot (frame: 167)
+[2026-06-07T12:42:40.790Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:40.817Z] - Screenshot (frame: 168)
+[2026-06-07T12:42:40.890Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:40.916Z] - Screenshot (frame: 169)
+[2026-06-07T12:42:40.990Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:41.016Z] - Screenshot (frame: 170)
+[2026-06-07T12:42:41.091Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:41.117Z] - Screenshot (frame: 171)
+[2026-06-07T12:42:41.190Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:41.217Z] - Screenshot (frame: 172)
+[2026-06-07T12:42:41.291Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:41.317Z] - Screenshot (frame: 173)
+[2026-06-07T12:42:41.390Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:41.417Z] - Screenshot (frame: 174)
+[2026-06-07T12:42:41.492Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:41.516Z] - Screenshot (frame: 175)
+[2026-06-07T12:42:41.590Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:41.615Z] - Screenshot (frame: 176)
+[2026-06-07T12:42:41.689Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:41.716Z] - Screenshot (frame: 177)
+[2026-06-07T12:42:41.791Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:41.817Z] - Screenshot (frame: 178)
+[2026-06-07T12:42:41.891Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:41.914Z] - Screenshot (frame: 179)
+[2026-06-07T12:42:41.990Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:42.016Z] - Screenshot (frame: 180)
+[2026-06-07T12:42:42.091Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:42.116Z] - Screenshot (frame: 181)
+[2026-06-07T12:42:42.191Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:42.217Z] - Screenshot (frame: 182)
+[2026-06-07T12:42:42.289Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:42.315Z] - Screenshot (frame: 183)
+[2026-06-07T12:42:42.391Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:42.416Z] - Screenshot (frame: 184)
+[2026-06-07T12:42:42.490Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:42.516Z] - Screenshot (frame: 185)
+[2026-06-07T12:42:42.591Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:42.617Z] - Screenshot (frame: 186)
+[2026-06-07T12:42:42.690Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:42.717Z] - Screenshot (frame: 187)
+[2026-06-07T12:42:42.791Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:42.816Z] - Screenshot (frame: 188)
+[2026-06-07T12:42:42.890Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:42.913Z] - Screenshot (frame: 189)
+[2026-06-07T12:42:42.991Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:43.016Z] - Screenshot (frame: 190)
+[2026-06-07T12:42:43.089Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:43.112Z] - Screenshot (frame: 191)
+[2026-06-07T12:42:43.190Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:43.215Z] - Screenshot (frame: 192)
+[2026-06-07T12:42:43.291Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:43.316Z] - Screenshot (frame: 193)
+[2026-06-07T12:42:43.390Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:43.418Z] - Screenshot (frame: 194)
+[2026-06-07T12:42:43.489Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:43.516Z] - Screenshot (frame: 195)
+[2026-06-07T12:42:43.591Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:43.617Z] - Screenshot (frame: 196)
+[2026-06-07T12:42:43.690Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:43.716Z] - Screenshot (frame: 197)
+[2026-06-07T12:42:43.790Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:43.817Z] - Screenshot (frame: 198)
+[2026-06-07T12:42:43.891Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:43.914Z] - Screenshot (frame: 199)
+[2026-06-07T12:42:43.990Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:44.015Z] - Screenshot (frame: 200)
+[2026-06-07T12:42:44.091Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:44.116Z] - Screenshot (frame: 201)
+[2026-06-07T12:42:44.190Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:44.216Z] - Screenshot (frame: 202)
+[2026-06-07T12:42:44.291Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:44.317Z] - Screenshot (frame: 203)
+[2026-06-07T12:42:44.390Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:44.416Z] - Screenshot (frame: 204)
+[2026-06-07T12:42:44.490Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:44.516Z] - Screenshot (frame: 205)
+[2026-06-07T12:42:44.590Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:44.618Z] - Screenshot (frame: 206)
+[2026-06-07T12:42:44.691Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:44.718Z] - Screenshot (frame: 207)
+[2026-06-07T12:42:44.790Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:44.814Z] - Screenshot (frame: 208)
+[2026-06-07T12:42:44.890Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:44.914Z] - Screenshot (frame: 209)
+[2026-06-07T12:42:44.989Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:45.012Z] - Screenshot (frame: 210)
+[2026-06-07T12:42:45.090Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:45.114Z] - Screenshot (frame: 211)
+[2026-06-07T12:42:45.191Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:45.216Z] - Screenshot (frame: 212)
+[2026-06-07T12:42:45.291Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:45.316Z] - Screenshot (frame: 213)
+[2026-06-07T12:42:45.390Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:45.416Z] - Screenshot (frame: 214)
+[2026-06-07T12:42:45.491Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:45.517Z] - Screenshot (frame: 215)
+[2026-06-07T12:42:45.590Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:45.617Z] - Screenshot (frame: 216)
+[2026-06-07T12:42:45.691Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:45.717Z] - Screenshot (frame: 217)
+[2026-06-07T12:42:45.790Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:45.817Z] - Screenshot (frame: 218)
+[2026-06-07T12:42:45.890Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:45.916Z] - Screenshot (frame: 219)
+[2026-06-07T12:42:45.992Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:46.016Z] - Screenshot (frame: 220)
+[2026-06-07T12:42:46.090Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:46.116Z] - Screenshot (frame: 221)
+[2026-06-07T12:42:46.189Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:46.216Z] - Screenshot (frame: 222)
+[2026-06-07T12:42:46.290Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:46.316Z] - Screenshot (frame: 223)
+[2026-06-07T12:42:46.389Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:46.417Z] - Screenshot (frame: 224)
+[2026-06-07T12:42:46.490Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:46.516Z] - Screenshot (frame: 225)
+[2026-06-07T12:42:46.591Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:46.617Z] - Screenshot (frame: 226)
+[2026-06-07T12:42:46.691Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:46.716Z] - Screenshot (frame: 227)
+[2026-06-07T12:42:46.791Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:46.817Z] - Screenshot (frame: 228)
+[2026-06-07T12:42:46.890Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:46.917Z] - Screenshot (frame: 229)
+[2026-06-07T12:42:46.990Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:47.016Z] - Screenshot (frame: 230)
+[2026-06-07T12:42:47.090Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:47.115Z] - Screenshot (frame: 231)
+[2026-06-07T12:42:47.191Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:47.213Z] - Screenshot (frame: 232)
+[2026-06-07T12:42:47.290Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:47.315Z] - Screenshot (frame: 233)
+[2026-06-07T12:42:47.390Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:47.416Z] - Screenshot (frame: 234)
+[2026-06-07T12:42:47.490Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:47.517Z] - Screenshot (frame: 235)
+[2026-06-07T12:42:47.590Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:47.617Z] - Screenshot (frame: 236)
+[2026-06-07T12:42:47.690Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:47.732Z] - Screenshot (frame: 237)
+[2026-06-07T12:42:47.791Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:47.815Z] - Screenshot (frame: 238)
+[2026-06-07T12:42:47.891Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:47.915Z] - Screenshot (frame: 239)
+[2026-06-07T12:42:47.990Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:48.014Z] - Screenshot (frame: 240)
+[2026-06-07T12:42:48.090Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:48.115Z] - Screenshot (frame: 241)
+[2026-06-07T12:42:48.190Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:48.216Z] - Screenshot (frame: 242)
+[2026-06-07T12:42:48.290Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:48.314Z] - Screenshot (frame: 243)
+[2026-06-07T12:42:48.390Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:48.416Z] - Screenshot (frame: 244)
+[2026-06-07T12:42:48.490Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:48.517Z] - Screenshot (frame: 245)
+[2026-06-07T12:42:48.590Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:48.617Z] - Screenshot (frame: 246)
+[2026-06-07T12:42:48.692Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:48.718Z] - Screenshot (frame: 247)
+[2026-06-07T12:42:48.790Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:48.816Z] - Screenshot (frame: 248)
+[2026-06-07T12:42:48.891Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:48.917Z] - Screenshot (frame: 249)
+[2026-06-07T12:42:48.991Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:49.015Z] - Screenshot (frame: 250)
+[2026-06-07T12:42:49.089Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:49.116Z] - Screenshot (frame: 251)
+[2026-06-07T12:42:49.192Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:49.217Z] - Screenshot (frame: 252)
+[2026-06-07T12:42:49.289Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:49.317Z] - Screenshot (frame: 253)
+[2026-06-07T12:42:49.390Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:49.417Z] - Screenshot (frame: 254)
+[2026-06-07T12:42:49.490Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:49.516Z] - Screenshot (frame: 255)
+[2026-06-07T12:42:49.590Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:49.648Z] - Screenshot (frame: 256)
+[2026-06-07T12:42:49.691Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:49.715Z] - Screenshot (frame: 257)
+[2026-06-07T12:42:49.790Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:49.816Z] - Screenshot (frame: 258)
+[2026-06-07T12:42:49.892Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:49.917Z] - Screenshot (frame: 259)
+[2026-06-07T12:42:49.990Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:50.015Z] - Screenshot (frame: 260)
+[2026-06-07T12:42:50.091Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:50.115Z] - Screenshot (frame: 261)
+[2026-06-07T12:42:50.191Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:50.216Z] - Screenshot (frame: 262)
+[2026-06-07T12:42:50.292Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:50.316Z] - Screenshot (frame: 263)
+[2026-06-07T12:42:50.390Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:50.417Z] - Screenshot (frame: 264)
+[2026-06-07T12:42:50.491Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:50.517Z] - Screenshot (frame: 265)
+[2026-06-07T12:42:50.590Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:50.616Z] - Screenshot (frame: 266)
+[2026-06-07T12:42:50.691Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:50.718Z] - Screenshot (frame: 267)
+[2026-06-07T12:42:50.790Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:50.817Z] - Screenshot (frame: 268)
+[2026-06-07T12:42:50.890Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:50.917Z] - Screenshot (frame: 269)
+[2026-06-07T12:42:50.991Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:51.048Z] - Screenshot (frame: 270)
+[2026-06-07T12:42:51.092Z] Add frame for command: /session/:sessionId/url => [url]
+[2026-06-07T12:42:51.114Z] - Screenshot (frame: 271)
+[2026-06-07T12:42:51.218Z] ffmpeg command: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg" -y -r 10 -i "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/.video-reporter-screenshots/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858/%04d.png" -vcodec libx264 -crf 32 -pix_fmt yuv420p -vf "scale=1200:trunc(ow/a/2)*2","setpts=1.0*PTS" "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4"
+[2026-06-07T12:42:51.264Z] - Screenshot (frame: 272)
+[2026-06-07T12:42:51.296Z] - Screenshot (frame: 274)
+[2026-06-07T12:42:51.344Z] - Screenshot (frame: 273)
+[2026-06-07T12:42:52.386Z] Generated video: "/Users/dadior/work/claude/claude-greenstand/treetracker-wallet-app/apps/bdd/test-artifacts/test-videos/.tmp/As-a-user-I-can-create-a-new-wallet-0-0--CHROME--06-07-2026--20-41-43-858.mp4" (1168ms)
+[2026-06-07T12:42:52.386Z] Generated 14 videos, video report done!

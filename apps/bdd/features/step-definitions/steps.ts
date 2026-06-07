@@ -241,6 +241,8 @@ When(/^I click on the wallet to view its details$/, async () => {
 
 // Id of the token opened on the details page, shared with the map-URL assertion.
 let selectedTokenId = "";
+// The app's own window handle, captured before the map link opens a new tab.
+let appWindowHandle = "";
 
 // Verify by counting the tokens listed on the details page. Reload to re-fetch
 // while the just-gifted token becomes visible.
@@ -295,26 +297,31 @@ Then(/^I should see the token details page with token info$/, async () => {
 
 // Click the location icon — it's an anchor with target=_blank, so it opens a new tab.
 When(/^I click the location icon on the token details page$/, async () => {
+  // Remember the app's window so the next step can switch to the *other* (new) tab.
+  appWindowHandle = await browser.getWindowHandle();
   await $("[data-test=token-location-link]").click();
 });
 
 Then(
   /^I should see the map page with the location of the token in a new tab$/,
   async () => {
-    // Wait for the new tab to open, switch to the newest one, and assert its URL
-    // points at the token's map page. We assert the URL only (the external map
-    // app may be slow/unavailable in the test environment).
+    // Wait for the new tab to open, then switch to the handle that ISN'T the app's
+    // (handle order isn't guaranteed, so don't assume the new tab is last).
     await browser.waitUntil(
       async () => (await browser.getWindowHandles()).length > 1,
       { timeout: 15000, timeoutMsg: "Map page did not open in a new tab" },
     );
     const handles = await browser.getWindowHandles();
-    await browser.switchToWindow(handles[handles.length - 1]);
+    const mapHandle =
+      handles.find(h => h !== appWindowHandle) ?? handles[handles.length - 1];
+    await browser.switchToWindow(mapHandle);
+    // Assert the new tab navigated to the token's map page. The external map app
+    // may return an error page, but the URL still carries /tokens/<id>.
     await browser.waitUntil(
       async () =>
         (await browser.getUrl()).includes("/tokens/" + selectedTokenId),
       {
-        timeout: 15000,
+        timeout: 20000,
         timeoutMsg: "New tab URL did not contain /tokens/" + selectedTokenId,
       },
     );
