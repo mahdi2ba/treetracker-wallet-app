@@ -173,7 +173,14 @@ When(/^I click on the register button$/, async () => {
   for (const sel of candidates) {
     const el = await $(sel);
     if (await el.isExisting()) {
-      await el.click();
+      try {
+        await el.click();
+      } catch {
+        // Headed Keycloak layout can overlap the full-width submit button so the
+        // native click is "intercepted". A JS click dispatches directly on the
+        // node and bypasses the hit-test.
+        await browser.execute((node: any) => node.click(), el);
+      }
       return;
     }
   }
@@ -232,6 +239,9 @@ When(/^I click on the wallet to view its details$/, async () => {
   await $("[data-test=token-list]").waitForDisplayed({ timeout: 15000 });
 });
 
+// Id of the token opened on the details page, shared with the map-URL assertion.
+let selectedTokenId = "";
+
 // Verify by counting the tokens listed on the details page. Reload to re-fetch
 // while the just-gifted token becomes visible.
 Then(
@@ -255,6 +265,57 @@ Then(
         timeout: 90000,
         interval: 1000,
         timeoutMsg: `Expected ${expected} token(s) in wallet "${stepState.walletName}"`,
+      },
+    );
+  },
+);
+
+// Click the first token in the list → navigate to that token's details page.
+When(
+  /^I click the token item on the list of tokens in the wallet details page$/,
+  async () => {
+    const item = await $("[data-test^='token-item-']");
+    await item.waitForDisplayed({ timeout: 15000 });
+    // Remember which token we're opening so later steps can assert the map URL.
+    const dt = (await item.getAttribute("data-test")) || "";
+    selectedTokenId = dt.replace("token-item-", "");
+    await item.click();
+    await $("[data-test=token-details-page]").waitForDisplayed({
+      timeout: 15000,
+    });
+  },
+);
+
+Then(/^I should see the token details page with token info$/, async () => {
+  await expect($("[data-test=token-details-page]")).toBeDisplayed();
+  const info = $("[data-test=token-details-id]");
+  await info.waitForDisplayed({ timeout: 15000 });
+  await expect(info).toHaveText(selectedTokenId, { containing: true });
+});
+
+// Click the location icon — it's an anchor with target=_blank, so it opens a new tab.
+When(/^I click the location icon on the token details page$/, async () => {
+  await $("[data-test=token-location-link]").click();
+});
+
+Then(
+  /^I should see the map page with the location of the token in a new tab$/,
+  async () => {
+    // Wait for the new tab to open, switch to the newest one, and assert its URL
+    // points at the token's map page. We assert the URL only (the external map
+    // app may be slow/unavailable in the test environment).
+    await browser.waitUntil(
+      async () => (await browser.getWindowHandles()).length > 1,
+      { timeout: 15000, timeoutMsg: "Map page did not open in a new tab" },
+    );
+    const handles = await browser.getWindowHandles();
+    await browser.switchToWindow(handles[handles.length - 1]);
+    await browser.waitUntil(
+      async () =>
+        (await browser.getUrl()).includes("/tokens/" + selectedTokenId),
+      {
+        timeout: 15000,
+        timeoutMsg: "New tab URL did not contain /tokens/" + selectedTokenId,
       },
     );
   },

@@ -46,7 +46,7 @@ function DefaultHeaderView({
       <Box sx={styles.headerLogoBox}>
         <HeaderLogo />
         <Typography variant="h5" noWrap>
-          Tree Trader
+          Treetrader
         </Typography>
       </Box>
 

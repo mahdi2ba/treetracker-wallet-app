@@ -52,7 +52,20 @@ function WalletDetails() {
 
       <Stack spacing={0.5} sx={{ mt: 1 }} data-test="token-list">
         {tokens.map((t: { id: string }) => (
-          <Paper key={t.id} sx={{ p: 2 }} data-test={`token-item-${t.id}`}>
+          <Paper
+            key={t.id}
+            sx={{
+              p: 2,
+              cursor: "pointer",
+              "&:hover": { bgcolor: "grey.50" },
+            }}
+            data-test={`token-item-${t.id}`}
+            onClick={() =>
+              router.push(
+                `/token/details?id=${t.id}&wallet=${encodeURIComponent(name)}`,
+              )
+            }
+          >
             <Typography variant="body2">{t.id}</Typography>
           </Paper>
         ))}
