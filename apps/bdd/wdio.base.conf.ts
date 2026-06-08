@@ -166,6 +166,43 @@ export const baseConfig: CustomTestrunner = {
     }
   },
 
+  // Overlay the current Gherkin step text on the page so the recorded video /
+  // headed run reads like a narrated walkthrough. Injected via browser.execute;
+  // persists across client-side (SPA) navigation and is re-injected after reloads.
+  beforeStep: async function (step: any) {
+    try {
+      const label = `${step?.keyword ?? ""}${step?.text ?? ""}`.trim();
+      if (!label) return;
+      await (global as any).browser.execute((text: string) => {
+        let el = document.getElementById("bdd-step-overlay");
+        if (!el) {
+          el = document.createElement("div");
+          el.id = "bdd-step-overlay";
+          el.style.cssText = [
+            "position:fixed",
+            "top:0",
+            "left:0",
+            "right:0",
+            "z-index:2147483647",
+            "background:rgba(20,20,20,0.85)",
+            "color:#fff",
+            "font:600 16px/1.45 system-ui,-apple-system,sans-serif",
+            "padding:10px 16px",
+            "text-align:center",
+            "pointer-events:none",
+            "white-space:pre-wrap",
+          ].join(";");
+          document.body.appendChild(el);
+        }
+        el.textContent = text;
+      }, label);
+      const pauseMs = Number(process.env.BDD_STEP_OVERLAY_MS ?? 300);
+      if (pauseMs > 0) await (global as any).browser.pause(pauseMs);
+    } catch {
+      // page not ready (about:blank) or native (Appium) context — ignore
+    }
+  },
+
   afterStep: async function (
     _step: any,
     _scenario: any,

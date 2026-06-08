@@ -1,0 +1,53 @@
+import Keycloak from "keycloak-js";
+
+// Single keycloak-js instance for the app (browser-only). Mirrors the pattern used
+// by treetracker-admin-client: a public client + PKCE, hosted login/registration.
+let keycloak: Keycloak | null = null;
+let initPromise: Promise<boolean> | null = null;
+
+export function getKeycloak(): Keycloak | null {
+  if (typeof window === "undefined") return null;
+  if (!keycloak) {
+    keycloak = new Keycloak({
+      url: process.env.NEXT_PUBLIC_KEYCLOAK_URL as string,
+      realm: process.env.NEXT_PUBLIC_KEYCLOAK_REALM as string,
+      clientId: process.env.NEXT_PUBLIC_KEYCLOAK_CLIENT_ID as string,
+    });
+  }
+  return keycloak;
+}
+
+// Idempotent init (guards React strict-mode double invocation). Also processes the
+// OIDC authorization-code response when running on the /auth/callback URL.
+export function initKeycloak(): Promise<boolean> {
+  const kc = getKeycloak();
+  if (!kc) return Promise.resolve(false);
+  if (!initPromise) {
+    // No `onLoad` — init must NOT trigger its own redirect (that would race the
+    // explicit login()/register() redirects from the login/signup pages). init
+    // still processes the OIDC code on /auth/callback regardless of onLoad.
+    initPromise = kc.init({ pkceMethod: "S256", checkLoginIframe: false });
+  }
+  return initPromise;
+}
+
+const callbackUri = () =>
+  typeof window !== "undefined"
+    ? `${window.location.origin}/auth/callback`
+    : undefined;
+
+export function login(): void {
+  getKeycloak()?.login({ redirectUri: callbackUri() });
+}
+
+export function register(): void {
+  getKeycloak()?.register({ redirectUri: callbackUri() });
+}
+
+export function logout(): void {
+  const redirectUri =
+    typeof window !== "undefined"
+      ? `${window.location.origin}/login`
+      : undefined;
+  getKeycloak()?.logout({ redirectUri });
+}

@@ -7,15 +7,17 @@ import NotificationsIcon from "@mui/icons-material/NotificationsOutlined";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import ChooseAction from "./ChooseAction";
 
 export default function BottomNavigationBar() {
   const [value, setValue] = React.useState(0);
-  const [openDrawer, setOpenDrawer] = React.useState(false);
 
   const router = useRouter();
 
   const handleNavigation = (newValue: number) => {
+    // Send/Notifications/Settings aren't implemented yet — disabled everywhere.
+    if (newValue === 2 || newValue === 3 || newValue === 4) {
+      return;
+    }
     setValue(newValue);
     switch (newValue) {
       case 0:
@@ -23,15 +25,6 @@ export default function BottomNavigationBar() {
         break;
       case 1:
         router.push("/wallet");
-        break;
-      case 2:
-        setOpenDrawer(true);
-        break;
-      case 3:
-        router.push("/notifications");
-        break;
-      case 4:
-        router.push("/settings");
         break;
       default:
         break;
@@ -46,14 +39,16 @@ export default function BottomNavigationBar() {
           bottom: 0,
           left: 0,
           right: 0,
-          zIndex: theme => theme.zIndex.appBar,
+          zIndex: (theme) => theme.zIndex.appBar,
           overflow: "visible", // Allow overflow
         }}
-        elevation={3}>
+        elevation={3}
+      >
         <BottomNavigation
           value={value}
           onChange={(event, newValue) => handleNavigation(newValue)}
-          showLabels>
+          showLabels
+        >
           <BottomNavigationAction
             data-test="navigation-home"
             label="Home"
@@ -67,6 +62,7 @@ export default function BottomNavigationBar() {
           <BottomNavigationAction
             label=""
             data-test="bottom-nav-send"
+            disabled
             icon={
               <Image
                 src="/assets/images/send.svg"
@@ -76,6 +72,7 @@ export default function BottomNavigationBar() {
                 style={{
                   position: "relative",
                   top: "-10px", // Move the image up
+                  opacity: 0.4, // Indicate disabled (not implemented yet)
                 }}
               />
             }
@@ -87,13 +84,16 @@ export default function BottomNavigationBar() {
           />
           <BottomNavigationAction
             label="Notifications"
+            disabled
             icon={<NotificationsIcon />}
           />
-          <BottomNavigationAction label="Settings" icon={<SettingsIcon />} />
+          <BottomNavigationAction
+            label="Settings"
+            disabled
+            icon={<SettingsIcon />}
+          />
         </BottomNavigation>
       </Paper>
-
-      <ChooseAction open={openDrawer} onClose={() => setOpenDrawer(false)} />
     </>
   );
 }

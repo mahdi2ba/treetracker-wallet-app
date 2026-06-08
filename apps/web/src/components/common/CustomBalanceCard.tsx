@@ -1,18 +1,27 @@
 "use client";
 
 import * as React from "react";
-import { Typography, Card, CardContent, Stack, Box } from "@mui/material";
+import {
+  Typography,
+  Card,
+  CardContent,
+  Stack,
+  Box,
+  CircularProgress,
+} from "@mui/material";
 
 interface CustomBalanceCardProps {
   icon: React.ReactNode;
   label: string;
   value: number;
+  isLoading?: boolean;
 }
 
 export function CustomBalanceCard({
   icon,
   label,
   value,
+  isLoading = false,
 }: CustomBalanceCardProps) {
   return (
     <Card
@@ -21,7 +30,8 @@ export function CustomBalanceCard({
         minWidth: "45%",
         display: "flex",
         flexDirection: "column",
-      }}>
+      }}
+    >
       <CardContent>
         <Stack direction="row" alignItems="center" spacing={1}>
           {icon}
@@ -30,7 +40,11 @@ export function CustomBalanceCard({
           </Typography>
         </Stack>
         <Box display="flex" justifyContent="flex-end">
-          <Typography variant="h4">{value}</Typography>
+          {isLoading ? (
+            <CircularProgress size={28} sx={{ my: 0.5 }} />
+          ) : (
+            <Typography variant="h4">{value}</Typography>
+          )}
         </Box>
       </CardContent>
     </Card>

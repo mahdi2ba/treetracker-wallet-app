@@ -1,6 +1,9 @@
 export const CAPABILITY_WEB_CHROME = [
   {
     browserName: "chrome",
+    // Classic WebDriver (not BiDi): avoids the "node belongs to different document"
+    // stale-element churn after the cross-origin redirect to Keycloak's pages.
+    "wdio:enforceWebDriverClassic": true,
     "goog:chromeOptions": {
       args: [
         "--disable-gpu",
@@ -17,6 +20,9 @@ export const CAPABILITY_WEB_CHROME = [
 export const CAPABILITY_WEB_CHROME_FOR_DEBUG = [
   {
     browserName: "chrome",
+    // Use classic WebDriver (not BiDi) — avoids the "node belongs to different
+    // document" stale-element churn after the cross-origin redirect to Keycloak.
+    "wdio:enforceWebDriverClassic": true,
     "goog:chromeOptions": {
       args: [
         "--disable-gpu",

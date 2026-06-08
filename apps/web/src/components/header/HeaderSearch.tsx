@@ -1,6 +1,12 @@
 "use client";
 import React from "react";
-import { Box, TextField, IconButton, InputAdornment } from "@mui/material";
+import {
+  Box,
+  TextField,
+  IconButton,
+  InputAdornment,
+  Tooltip,
+} from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useHeader } from "@/context/HeaderContext";
@@ -9,12 +15,14 @@ interface HeaderSearchProps {
   isExpanded: boolean;
   onExpand: () => void;
   onCollapse: () => void;
+  disabled?: boolean;
 }
 
 export default function HeaderSearch({
   isExpanded,
   onExpand,
   onCollapse,
+  disabled = false,
 }: HeaderSearchProps) {
   const { searchQuery, setSearchQuery } = useHeader();
 
@@ -63,17 +71,28 @@ export default function HeaderSearch({
           />
         </>
       ) : (
-        <IconButton
-          onClick={onExpand}
-          sx={{
-            backgroundColor: (theme) => theme.palette.header.main,
-            "&:hover": {
-              backgroundColor: (theme) => theme.palette.primary.dark,
-            },
-          }}
-        >
-          <SearchIcon sx={{ color: (theme) => theme.palette.common.white }} />
-        </IconButton>
+        <Tooltip title={disabled ? "Coming soon" : ""}>
+          <span>
+            <IconButton
+              onClick={onExpand}
+              disabled={disabled}
+              sx={{
+                backgroundColor: (theme) => theme.palette.header.main,
+                "&:hover": {
+                  backgroundColor: (theme) => theme.palette.primary.dark,
+                },
+                "&.Mui-disabled": {
+                  backgroundColor: (theme) =>
+                    theme.palette.action.disabledBackground,
+                },
+              }}
+            >
+              <SearchIcon
+                sx={{ color: (theme) => theme.palette.common.white }}
+              />
+            </IconButton>
+          </span>
+        </Tooltip>
       )}
     </Box>
   );

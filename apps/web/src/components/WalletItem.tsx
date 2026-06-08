@@ -32,7 +32,9 @@ export default function WalletItem({
       </Box>
 
       <Box display="flex" alignItems="center" gap={1}>
-        <Typography color="green">{tokens_in_wallet}</Typography>
+        <Typography color="green" data-test={`wallet-item-tokens-${name}`}>
+          {tokens_in_wallet}
+        </Typography>
         <Button variant="text" sx={{ color: "green", minWidth: "auto" }}>
           <ChevronRightIcon fontSize="small" />
         </Button>

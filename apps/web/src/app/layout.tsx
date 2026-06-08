@@ -5,6 +5,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import theme from "@/theme";
+import { KeycloakProvider } from "@/components/KeycloakProvider";
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
@@ -13,7 +14,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
             <CssBaseline />
-            {props.children}
+            <KeycloakProvider>{props.children}</KeycloakProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
