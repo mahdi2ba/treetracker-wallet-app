@@ -59,9 +59,13 @@ Given(/^I am on the (\w+) page$/, async (page: string) => {
 //#region LOGIN
 
 When(/^I login with (\w+) and (.+)$/, async (username, password) => {
-  await $('input[name="username"]').setValue(username);
-  await $('input[name="password"]').setValue(password);
-  await $('button[type="submit"]').click();
+  // The app /login redirects to Keycloak's hosted login page. Use the same
+  // selectors as keycloakLogin(): the submit is <input id="kc-login">, not the
+  // <button type="submit"> the old custom form used.
+  await $("#username").waitForDisplayed({ timeout: 20000 });
+  await $("#username").setValue(username);
+  await $("#password").setValue(password);
+  await $("#kc-login").click();
 });
 
 Then(/^I should see text (.*)$/, async message => {
