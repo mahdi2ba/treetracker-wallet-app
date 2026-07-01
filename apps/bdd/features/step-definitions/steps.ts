@@ -305,15 +305,17 @@ Then(
   async () => {
     // A new tab opens for the map. Headed Chrome also exposes devtools:// tabs as
     // window handles, so don't assume which handle is the map — scan every handle
-    // and land on the one whose URL carries /tokens/<id>. (The external map app may
-    // return an error page, but the URL still carries the token id.)
+    // and land on the one whose URL carries /tokens/<id>, then verify the page
+    // itself displays that token id.
     await browser.waitUntil(
       async () => {
         const handles = await browser.getWindowHandles();
         for (const h of handles) {
           await browser.switchToWindow(h);
           if ((await browser.getUrl()).includes("/tokens/" + selectedTokenId)) {
-            return true;
+            const body = $("body");
+            await body.waitForDisplayed({ timeout: 10000 });
+            return (await body.getText()).includes(selectedTokenId);
           }
         }
         return false;
@@ -321,10 +323,7 @@ Then(
       {
         timeout: 20000,
         interval: 1000,
-        timeoutMsg:
-          "No tab navigated to the token map page (/tokens/" +
-          selectedTokenId +
-          ")",
+        timeoutMsg: "No map tab displayed token id " + selectedTokenId,
       },
     );
   },
